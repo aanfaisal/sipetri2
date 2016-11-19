@@ -1,67 +1,59 @@
-#laravel-gentelella
+# The Goal
+Sistem Informasi Audit dengan Gentella Admin
 
-Laravel-gentelella is a Laravel 5.3 application with all Gentelella template components.
+# Requirements
+* [Latest PHP 5](http://php.net)
+* [Composer](http://getcomposer.org)
+* [NodeJS/NPM](http://nodejs.org)
+* [Git](http://git-scm.com)
+* [Mysql](http://mysql.com)
 
-
-### 3.0
-- Laravel-Gentelella run now on Laravel 5.3 !
-
-## Gentelella
-
-Gentellela Admin is a free to use Bootstrap admin template.
-This template uses the default Bootstrap 3 styles along with a variety of powerful jQuery plugins and tools to create a powerful framework for creating admin panels or back-end dashboards.
-
-Theme uses several libraries for charts, calendar, form validation, wizard style interface, off-canvas navigation menu, text forms, date range, upload area, form autocomplete, range slider, progress bars, notifications and much more.
-
-We would love to see how you use this awesome admin template. You can notify us about your site, app or service by tweeting to [@colorlib](https://twitter.com/colorlib). Once the list will grown long enough we will write a post similar to [this](https://colorlib.com/wp/avada-theme-examples/) to showcase the best examples.
-
-
-### Theme Demo
-![Gentelella Bootstrap Admin Template](https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/gentelella-admin-template-preview.jpg "Gentelella Theme Browser Preview")
-
-**[Template Demo](https://colorlib.com/polygon/gentelella/index.html)**
-
-
-## Laravel 5.3
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
-
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
-### Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs/5.3).
-
-
-
-Go to the project folder 
+# Installation
+Clone repository
 ```
-cd laravel-gentelella
+$ git clone https://github.com/anisku11/sipetri2.git
 ```
 
-Update composer 
-```
-composer update
-```
-
-Copy ```.env.example``` file to ```.env```
-
-For Unix
-```
-cp .env.example .env
-```
-For Windows
-```
-copy .env.example .env
-```
-
-Next, run this follow commands
+Do composer install/update
 
 ```
-php artisan key:generate
-npm install --global bower gulp
-npm install
-bower install
-gulp
+$ composer install
+
+or
+
+$ composer update
 ```
+Do NPM Install
+```
+$ npm install
+```
+
+Do Gulp
+```
+$ gulp --production
+```
+
+Rename the .env.example to .env and change setting accordingly.
+
+Generate application key
+```
+$ php artisan key:generate
+```
+
+Do Migration and Seeder
+```
+$ php artisan migrate
+$ php artisan db:seed
+```
+
+If something seem not right maybe try to dump-autoload and redo the process
+```
+$ composer dump-autoload
+```
+
+# Features Suggestion
+Fell free to add any feature suggestion by creating new **Issues**, and we can start discussing it
+
+# Contributing
+Start contributing by joining the team
 
