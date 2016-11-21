@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Gentellela Alela! | </title>
+   <title>Sistem Informasi Audit Energi Listrik | UNWAHAS </title>
     
     <!-- Bootstrap -->
     <link href="{{ asset("css/bootstrap.min.css") }}" rel="stylesheet">
@@ -27,7 +27,7 @@
             <form method="post" action="{{ url('/register') }}">
                 {!! csrf_field() !!}
                 
-                <h1>Create Account</h1>
+                <h1>Buat Akun</h1>
                 
                 <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
                     <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Full Name">
@@ -73,23 +73,23 @@
                     @endif
                 </div>
                 <div>
-                    <button class="btn btn-default submit" >Register</button>
+                    <button class="btn btn-default submit" >Registrasi</button>
                 </div>
                 
                 <div class="clearfix"></div>
                 
                 <div class="separator">
-                    <p class="change_link">Already a member ?
+                    <p class="change_link">Sudah daftar?
                         <a href="{{ url('/login') }}" class="to_register"> Log in </a>
                     </p>
                     
                     <div class="clearfix"></div>
                     <br />
                     
-                    <div>
-                        <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                        <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
-                    </div>
+                        <div>
+                            <h1><i class="fa fa-paw"></i> Sipetri !</h1>
+                            <p>Universitas Wahid Hasyim ©2016</p>
+                        </div>
                 </div>
             </form>
         </section>

@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-            <a href="{{ url('/') }}" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
+            <a href="{{ url('/') }}" class="site_title"><i class="fa fa-paw"></i> <span>Sipetri !</span></a>
         </div>
 
         <div class="clearfix"></div>
@@ -12,7 +12,7 @@
                 <img src="{{ Gravatar::src(Auth::user()->email) }}" alt="Avatar of {{ Auth::user()->name }}" class="img-circle profile_img">
             </div>
             <div class="profile_info">
-                <span>Welcome,</span>
+                <span>Selamat Datang,</span>
                 <h2>{{ Auth::user()->name }}</h2>
             </div>
         </div>

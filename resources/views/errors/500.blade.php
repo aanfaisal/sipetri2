@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Gentellela Alela! | </title>
+   <title>Sistem Informasi Audit Energi Listrik | UNWAHAS </title>
     
     <!-- Bootstrap -->
     <link href="{{ asset("css/bootstrap.min.css") }}" rel="stylesheet">
@@ -26,14 +26,14 @@
                 <div class="text-center">
                     <h1 class="error-number">500</h1>
                     <h2>Internal Server Error</h2>
-                    <p>We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing. <a href="#">Report this?</a>
+                    <p>Sipetri mencatat error ini, apabila berlanjut tolong hubungi admin server anda<a href="#">Laporkan ini?</a>
                     </p>
                     <div class="mid_center">
-                        <h3>Search</h3>
+                        <h3>Cari</h3>
                         <form>
                             <div class="col-xs-12 form-group pull-right top_search">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <input type="text" class="form-control" placeholder="Cari untuk...">
                                     <span class="input-group-btn">
                               <button class="btn btn-default" type="button">Go!</button>
                           </span>
