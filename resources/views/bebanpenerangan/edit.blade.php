@@ -6,7 +6,7 @@
     <div class="">
         <div class="page-title">
           <div class="title_left">
-            <h3>Data %%modelName%%</h3>
+            <h3>Data BebanPenerangan</h3>
           </div>
                   <div class="title_right">
                     <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
@@ -25,7 +25,7 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2> %%crudNameCap%%  <small> sipetri</small></h2>
+            <h2>Edit BebanPenerangan {{ $bebanpenerangan->bebanpen_id }} <small> sipetri</small></h2>
                 <ul class="nav navbar-right panel_toolbox">
                   <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                   </li>
@@ -46,26 +46,37 @@
           <div class="x_content">
             <br />
 
-                <h1>%%modelName%% {{ $%%crudNameSingular%%->%%primaryKey%% }}</h1>
-                <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>No. </th> <th>%%formHeadingHtml%%</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{ $%%crudNameSingular%%->%%primaryKey%% }}</td> %%formBodyHtml%%
-                            </tr>
-                        </tbody>
-                    </table>
+                <h1></h1>
+                <hr/>
+
+                {!! Form::model($bebanpenerangan, [
+                    'method' => 'PATCH',
+                    'url' => ['bebanpenerangan', $bebanpenerangan->bebanpen_id],
+                    'class' => 'form-horizontal',
+                    'files' => true
+                ]) !!}
+
+                %%formFieldsHtml%%
+
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-3">
+                        {!! Form::submit('Update', ['class' => 'btn btn-primary form-control']) !!}
+                    </div>
                 </div>
-            </div>
+                {!! Form::close() !!}
+
+                @if ($errors->any())
+                    <ul class="alert alert-danger">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                @endif
             <div class="clearfix"></div>
           </div>
         </div>
        </div>
       </div>
     </div>
+    
 @endsection

@@ -2,30 +2,49 @@
 
 @section('content')
 
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1>
-        @yield('contentheader_title', 'Tambah Data %%crudName%%')
-        <small>@yield('contentheader_description')</small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>%%crudName%%</a></li>
-        <li class="active">Tambah %%crudName%%</li>
-    </ol>
-</section>
+ <div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+          <div class="title_left">
+            <h3>Data %%modelName%%</h3>
+          </div>
+                  <div class="title_right">
+                    <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                      <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Cari...">
+                        <span class="input-group-btn">
+                          <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+        </div>
+    <div class="clearfix"></div>
 
-<section class="content">
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">%%modelName%%</h3>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-        <hr/>
-
-                    <h1>Tambah Data %%modelName%%</h1>
-                    <hr/>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Tambah Data %%modelName%% <small>sipetri</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                      <li><a href="#">Settings 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <br />
 
                     {!! Form::open(['url' => '%%routeGroup%%%%crudName%%', 'class' => 'form-horizontal', 'files' => true]) !!}
 
@@ -45,9 +64,11 @@
                             @endforeach
                         </ul>
                     @endif
-                </div>
-            </div>
+
+            <div class="clearfix"></div>
+          </div>
         </div>
+       </div>
+      </div>
     </div>
-</section>
 @endsection
