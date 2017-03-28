@@ -19,54 +19,43 @@
         <!-- /menu profile quick info -->
 
         <br />
+        <br>
 
         <!-- sidebar menu -->
         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
-                <h3>Group 1</h3>
-                <ul class="nav side-menu">
-                    <li><a><i class="fa fa-home"></i> Multiple link <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                            <li><a href="#">Link 1</a></li>
-                            <li><a href="#">Link 2</a></li>
-                            <li><a href="#">Link 3</a></li>
-                        </ul>
+            <h3>__________________________</h3>
+               	<ul class="nav side-menu">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-laptop"></i>
+                            Dashboard
+                            <span class="label label-success pull-right">Flag</span>
+                        </a>
+                    </li>
+                   <li>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-laptop"></i>
+                            Data Penerangan
+                        </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <i class="fa fa-laptop"></i>
-                            One link
-                            <span class="label label-success pull-right">Flag</span>
+                            Data Mesin
                         </a>
                     </li>
-                </ul>
-            </div>
-            <div class="menu_section">
-                <h3>Group 2</h3>
-                <ul class="nav side-menu">
                     <li>
-                        <a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                            <li>
-                                <a href="#">Level One</a>
-                                <li>
-                                    <a>Level One<span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu">
-                                        <li class="sub_menu">
-                                            <a href="#">Level Two</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Level Two</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Level Two</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            <li>
-                                <a href="#">Level One</a>
-                            </li>
-                        </ul>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-laptop"></i>
+                            Data AC
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="fa fa-laptop"></i>
+                            Data Perhitungan
+                        </a>
                     </li>
                 </ul>
             </div>
