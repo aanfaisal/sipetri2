@@ -148,8 +148,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 		Illuminate\Notifications\NotificationServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
-        Collective\Bus\BusServiceProvider::class,
+       // Collective\Html\HtmlServiceProvider::class,
+        //Collective\Bus\BusServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -159,7 +159,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\BroadcastServiceProvider::class,
-		Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
+		//Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
@@ -210,11 +210,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
     	'Notification' => Illuminate\Support\Facades\Notification::class,
-    	'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
+    	//'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
+       // 'Form' => Collective\Html\FormFacade::class,
+       // 'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 
