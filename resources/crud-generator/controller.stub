@@ -5,41 +5,48 @@ namespace DummyNamespace;
 use DummyRootNamespaceHttp\Requests;
 use DummyRootNamespaceHttp\Controllers\Controller;
 
-use DummyRootNamespace{{modelName}};
+use DummyRootNamespace{{modelNamespace}}{{modelName}};
 use Illuminate\Http\Request;
-use Carbon\Carbon;
 use Session;
-use DB;
 
 class DummyClass extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        ${{crudName}} = {{modelName}}::paginate({{pagination}});
+        $keyword = $request->get('search');
+        $perPage = {{pagination}};
 
-        return view('{{viewPath}}{{crudName}}.index', compact('{{crudName}}'));
+        if (!empty($keyword)) {
+            ${{crudName}} = {{modelName}}::{{whereSnippet}}
+                ->paginate($perPage);
+        } else {
+            ${{crudName}} = {{modelName}}::paginate($perPage);
+        }
+
+        return view('{{viewPath}}{{viewName}}.index', compact('{{crudName}}'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return \Illuminate\View\View
      */
     public function create()
     {
-        return view('{{viewPath}}{{crudName}}.create');
+        return view('{{viewPath}}{{viewName}}.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
@@ -48,77 +55,73 @@ class DummyClass extends Controller
         {{fileSnippet}}
         {{modelName}}::create($requestData);
 
-        Session::flash('flash_message', '{{modelName}} Telah Ditambahkan!');
+        Session::flash('flash_message', '{{modelName}} added!');
 
-        return redirect('{{routeGroup}}{{crudName}}');
+        return redirect('{{routeGroup}}{{viewName}}');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  ${{crudName}}_id
+     * @param  int  $id
      *
-     * @return Response
+     * @return \Illuminate\View\View
      */
-    public function show(${{crudName}}_id)
+    public function show($id)
     {
-        ${{crudNameSingular}} = {{modelName}}::findOrFail(${{crudName}}_id);
+        ${{crudNameSingular}} = {{modelName}}::findOrFail($id);
 
-        return view('{{viewPath}}{{crudName}}.show', compact('{{crudNameSingular}}'));
+        return view('{{viewPath}}{{viewName}}.show', compact('{{crudNameSingular}}'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  ${{crudName}}_id
+     * @param  int  $id
      *
-     * @return Response
+     * @return \Illuminate\View\View
      */
-    public function edit(${{crudName}}_id)
+    public function edit($id)
     {
-        ${{crudNameSingular}} = {{modelName}}::findOrFail(${{crudName}}_id);
+        ${{crudNameSingular}} = {{modelName}}::findOrFail($id);
 
-        return view('{{viewPath}}{{crudName}}.edit', compact('{{crudNameSingular}}'));
+        return view('{{viewPath}}{{viewName}}.edit', compact('{{crudNameSingular}}'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  int  ${{crudName}}_id
+     * @param  int  $id
      * @param \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-
-    public function update(${{crudName}}_id, Request $request)
+    public function update($id, Request $request)
     {
         {{validationRules}}
         $requestData = $request->all();
         {{fileSnippet}}
-        ${{crudNameSingular}} = {{modelName}}::findOrFail(${{crudName}}_id);
+        ${{crudNameSingular}} = {{modelName}}::findOrFail($id);
         ${{crudNameSingular}}->update($requestData);
 
-        Session::flash('flash_message', '{{modelName}} Telah Diupdate!');
+        Session::flash('flash_message', '{{modelName}} updated!');
 
-        return redirect('{{routeGroup}}{{crudName}}');
+        return redirect('{{routeGroup}}{{viewName}}');
     }
-
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  ${{crudName}}_id
+     * @param  int  $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-
-    public function destroy(${{crudName}}_id)
+    public function destroy($id)
     {
-        {{modelName}}::destroy(${{crudName}}_id);
+        {{modelName}}::destroy($id);
 
-        Session::flash('flash_message', '{{modelName}} Telah Dihapus!');
+        Session::flash('flash_message', '{{modelName}} deleted!');
 
-        return redirect('{{routeGroup}}{{crudName}}');
+        return redirect('{{routeGroup}}{{viewName}}');
     }
-
 }

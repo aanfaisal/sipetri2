@@ -1,92 +1,69 @@
-@extends('layouts.blank')
+@extends('layouts.app')
 
 @section('content')
-<div class="right_col" role="main">
-    <div class="">
-        <div class="page-title">
-          <div class="title_left">
-            <h3>Data %%modelName%%</h3>
-          </div>
-                  <div class="title_right">
-                    <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                      <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Cari...">
-                        <span class="input-group-btn">
-                          <button class="btn btn-default" type="button">Go!</button>
-                        </span>
-                      </div>
+    <div class="container">
+        <div class="row">
+            @include('admin.sidebar')
+
+            <div class="col-md-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">%%crudNameCap%%</div>
+                    <div class="panel-body">
+                        <a href="{{ url('/%%routeGroup%%%%viewName%%/create') }}" class="btn btn-success btn-sm" title="Add New %%modelName%%">
+                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                        </a>
+
+                        {!! Form::open(['method' => 'GET', 'url' => '/%%routeGroup%%%%viewName%%', 'class' => 'navbar-form navbar-right', 'role' => 'search'])  !!}
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="search" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                        {!! Form::close() !!}
+
+                        <br/>
+                        <br/>
+                        <div class="table-responsive">
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>%%formHeadingHtml%%<th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($%%crudName%% as $item)
+                                    <tr>
+                                        <td>{{ $item->id }}</td>
+                                        %%formBodyHtml%%
+                                        <td>
+                                            <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%%) }}" title="View %%modelName%%"><button class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%% . '/edit') }}" title="Edit %%modelName%%"><button class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            {!! Form::open([
+                                                'method'=>'DELETE',
+                                                'url' => ['/%%routeGroup%%%%viewName%%', $item->%%primaryKey%%],
+                                                'style' => 'display:inline'
+                                            ]) !!}
+                                                {!! Form::button('<i class="fa fa-trash-o" aria-hidden="true"></i> Delete', array(
+                                                        'type' => 'submit',
+                                                        'class' => 'btn btn-danger btn-xs',
+                                                        'title' => 'Delete %%modelName%%',
+                                                        'onclick'=>'return confirm("Confirm delete?")'
+                                                )) !!}
+                                            {!! Form::close() !!}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            <div class="pagination-wrapper"> {!! $%%crudName%%->appends(['search' => Request::get('search')])->render() !!} </div>
+                        </div>
+
                     </div>
-                  </div>
-        </div>
-    <div class="clearfix"></div>
-
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel">
-          <div class="x_title">
-            <h2> %%crudNameCap%%  <small> sipetri</small></h2>
-                <ul class="nav navbar-right panel_toolbox">
-                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#">Settings 1</a>
-                      </li>
-                      <li><a href="#">Settings 2</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li><a class="close-link"><i class="fa fa-close"></i></a>
-                  </li>
-                </ul>
-            <div class="clearfix"></div>
-          </div>
-          <div class="x_content">
-            <br />
-
-                <h1>%%crudNameCap%% <a href="{{ url('%%routeGroup%%%%crudName%%/create') }}" class="btn btn-primary pull-right btn-sm">Tambah Data %%modelName%%</a></h1>
-                <div class="table">
-                    <table class="table table-bordered table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>No</th>%%formHeadingHtml%%<th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                       @foreach($%%crudName%% as $item)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                %%formBodyHtml%%
-                                <td>
-                                    <a href="{{ url('%%routeGroup%%%%crudName%%/' . $item->%%primaryKey%% . '/edit') }}">
-                                        <button type="submit" class="btn btn-primary btn-xs">Update</button>
-                                    </a> /
-                                    {!! Form::open([
-                                        'method'=>'DELETE',
-                                        'url' => ['%%routeGroup%%%%crudName%%', $item->%%primaryKey%%],
-                                        'style' => 'display:inline'
-                                    ]) !!}
-
-                                    {!! Form::button('<span class="glyphicon glyphicon-trash" aria-hidden="true" title="Delete %%modelName%%" />', array(
-                                    'type' => 'submit',
-                                    'class' => 'btn btn-danger btn-xs',
-                                    'title' => 'Delete %%modelName%%',
-                                    'onclick'=>'return confirm("Confirm delete?")'
-                                    )) !!}
-                                    {!! Form::close() !!}
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                    <center><div class="pagination"> {!! $%%crudName%%->render() !!} </div></center>
                 </div>
-                </div>
-            <div class="clearfix"></div>
-          </div>
+            </div>
         </div>
-       </div>
-      </div>
     </div>
 @endsection

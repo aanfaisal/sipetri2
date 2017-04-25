@@ -4,52 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9ac96ccea650621a24f3ef01ab671e3",
+    "content-hash": "f4a3cd7ee696bfb2201b7c8d33eb1b56",
     "packages": [
-        {
-            "name": "appzcoder/crud-generator",
-            "version": "v1.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/appzcoder/crud-generator.git",
-                "reference": "ab6805c276ab79d139dda24dcf58802b50fd00ae"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/appzcoder/crud-generator/zipball/ab6805c276ab79d139dda24dcf58802b50fd00ae",
-                "reference": "ab6805c276ab79d139dda24dcf58802b50fd00ae",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.1",
-                "php": ">=5.5.9"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Appzcoder\\CrudGenerator\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sohel Amin",
-                    "email": "sohelamincse@gmail.com",
-                    "homepage": "http://www.appzcoder.com"
-                }
-            ],
-            "description": "Laravel 5 CRUD Generator",
-            "keywords": [
-                "crud",
-                "crud generator",
-                "laravel",
-                "laravel crud generator"
-            ],
-            "time": "2016-09-28T18:05:53+00:00"
-        },
         {
             "name": "barryvdh/laravel-dompdf",
             "version": "v0.8.0",
@@ -636,16 +592,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.37",
+            "version": "1.0.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "78b5cc4feb61a882302df4fbaf63b7662e5e4ccd"
+                "reference": "2474325ee924134bb05848663b12531f6f2e9fbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/78b5cc4feb61a882302df4fbaf63b7662e5e4ccd",
-                "reference": "78b5cc4feb61a882302df4fbaf63b7662e5e4ccd",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/2474325ee924134bb05848663b12531f6f2e9fbe",
+                "reference": "2474325ee924134bb05848663b12531f6f2e9fbe",
                 "shasum": ""
             },
             "require": {
@@ -667,12 +623,12 @@
                 "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
                 "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
                 "league/flysystem-copy": "Allows you to use Copy.com storage",
-                "league/flysystem-dropbox": "Allows you to use Dropbox storage",
                 "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
                 "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
                 "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
                 "league/flysystem-webdav": "Allows you to use WebDAV storage",
-                "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter"
+                "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
+                "spatie/flysystem-dropbox": "Allows you to use Dropbox storage"
             },
             "type": "library",
             "extra": {
@@ -715,7 +671,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-03-22T15:43:14+00:00"
+            "time": "2017-04-25T15:24:43+00:00"
         },
         {
             "name": "maatwebsite/excel",
@@ -1435,16 +1391,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.6",
+            "version": "v5.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e"
+                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
-                "reference": "81fdccfaf8bdc5d5d7a1ef6bb3a61bbb1a6c4a3e",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
+                "reference": "56db4ed32a6d5c9824c3ecc1d2e538f663f47eb4",
                 "shasum": ""
             },
             "require": {
@@ -1485,7 +1441,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-02-13T07:52:53+00:00"
+            "time": "2017-04-20T17:32:18+00:00"
         },
         {
             "name": "symfony/console",
@@ -2535,6 +2491,58 @@
     ],
     "packages-dev": [
         {
+            "name": "appzcoder/crud-generator",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/appzcoder/crud-generator.git",
+                "reference": "93ec6907d78cbadc381f56d054565f31ce46944b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/appzcoder/crud-generator/zipball/93ec6907d78cbadc381f56d054565f31ce46944b",
+                "reference": "93ec6907d78cbadc381f56d054565f31ce46944b",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.1",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.6",
+                "orchestra/testbench": "^3.3",
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Appzcoder\\CrudGenerator\\": "src/"
+                },
+                "classmap": [
+                    "tests"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sohel Amin",
+                    "email": "sohelamincse@gmail.com",
+                    "homepage": "http://www.appzcoder.com"
+                }
+            ],
+            "description": "Laravel 5 CRUD Generator",
+            "keywords": [
+                "crud",
+                "crud generator",
+                "laravel",
+                "laravel crud generator"
+            ],
+            "time": "2017-02-11T12:25:38+00:00"
+        },
+        {
             "name": "doctrine/instantiator",
             "version": "1.0.5",
             "source": {
@@ -2680,6 +2688,60 @@
                 "test"
             ],
             "time": "2015-05-11T14:41:42+00:00"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v5.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "7570f25d58a00fd6909c0563808590f9cdb14d47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/7570f25d58a00fd6909c0563808590f9cdb14d47",
+                "reference": "7570f25d58a00fd6909c0563808590f9cdb14d47",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.4.*",
+                "illuminate/routing": "5.4.*",
+                "illuminate/session": "5.4.*",
+                "illuminate/support": "5.4.*",
+                "illuminate/view": "5.4.*",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "illuminate/database": "5.4.*",
+                "mockery/mockery": "~0.9.4",
+                "phpunit/phpunit": "~5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "http://laravelcollective.com",
+            "time": "2017-01-26T19:27:05+00:00"
         },
         {
             "name": "mockery/mockery",
